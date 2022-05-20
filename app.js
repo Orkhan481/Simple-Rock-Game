@@ -19,23 +19,22 @@ function startGame() {
     const myChoosed = this.dataset.id;
     let resultGame;
     if (computerChoosed == myChoosed) {
-        resultGame = "Tie,You can play again"
+        resultGame = "Tie,You can play again!"
     } else if (computerChoosed == 0 && myChoosed == 2) {
-        resultGame = "You lost!Try again";
+        resultGame = "You lost!Try again!";
 
     } else if (computerChoosed == 1 && myChoosed == 0) {
-        resultGame = "You lost!Try again"
+        resultGame = "You lost!Try again!"
 
     } else if (computerChoosed == 2 && myChoosed == 1) {
-        resultGame = "You lost!Try again"
+        resultGame = "You lost!Try again!"
 
     } else {
         resultGame = "You Win,congrate!"
 
     }
 
-
-    result.style.color = 'darkred';
+    result.style.fontWeight = '700';
     result.textContent = resultGame;
      setTimeout(function(){
          result.textContent = "";
@@ -57,3 +56,12 @@ function randomChoice() {
     }, 1000)
     return number;
 }
+
+// Preloader
+
+const loader = document.querySelector("#preloader");
+window.addEventListener("load",function(){
+    setTimeout(function(){
+        loader.style.display = 'none';
+    },1000)
+})
